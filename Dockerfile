@@ -1,5 +1,8 @@
 FROM ubuntu:22.04
 
+# Avoid tzdata asking for interactive input
+ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
+
 RUN apt-get update && apt-get install -y \
     g++ \
     cmake \
